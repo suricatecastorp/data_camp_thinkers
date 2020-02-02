@@ -12,11 +12,11 @@ In this project, we are interested in the thinkers who have influenced the histo
 
 The dataset will consist of three databases:
 1. A dataset that contains information about each thinker with the following fields (obtained via Wikipedia in English):
-  * `id`: arbitrary but unique integer identifier 
-  * `name`
-  * `date_birth` - `date_death`: dates of birth and death (if known)
-  * `place_birth` - `place_death`: places of birth and death (if known)
-  * `summary`: Abstract extracted from [Wikipedia](https://en.wikipedia.org/wiki/Main_Page)
+   * `id`: arbitrary but unique integer identifier 
+   * `name`
+   * `date_birth` - `date_death`: dates of birth and death (if known)
+   * `place_birth` - `place_death`: places of birth and death (if known)
+   * `summary`: Abstract extracted from [Wikipedia](https://en.wikipedia.org/wiki/Main_Page)
 2. A training file `training_set.csv` that lists pairs of thinker identifiers and a boolean (0 or 1) value corresponding to the exercise of influence or not.
 3. A test file `testing_set.csv` with only pairs of thinkers whose influence must be determined or not
 
@@ -24,8 +24,9 @@ The dataset will consist of three databases:
 
 Open a terminal and
 
-1. Install the `ramp-workflow` library (if not already done)  
-```$ pip install git+https://github.com/paris-saclay-cds/ramp-workflow.git```
+1. Install the `ramp-workflow` library (if not already done):
+
+ ```$ pip install git+https://github.com/paris-saclay-cds/ramp-workflow.git```
 
 2. Follow the ramp-kits instructions from the [wiki](https://github.com/paris-saclay-cds/ramp-workflow/wiki/Getting-started-with-a-ramp-kit)
 
@@ -33,5 +34,6 @@ Open a terminal and
 
 Get started on this RAMP with the [notebook]().
 
-To test the starting-kit, run  
-```ramp_test_submission --quick-test```
+To test the starting-kit, run:
+
+ ```$ ramp_test_submission --quick-test```
