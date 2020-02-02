@@ -5,12 +5,13 @@ from sklearn.model_selection import StratifiedShuffleSplit
 from rampwf.workflows import FeatureExtractorRegressor
 from rampwf.score_types.base import BaseScoreType
 from sklearn.metrics import recall_score, precision_score
+from rampwf.score_types.classifier_base import ClassifierBaseScoreType
 
 problem_title = 'Graphs of Wikipedia: Influential Thinkers'
 
 _target_column_name = 'link'
 _ignore_column_names = ['index']
-_prediction_label_names = [0, 1]
+_prediction_label_names = [0,1]
 # A type (class) which will be used to create wrapper objects for y_pred
 Predictions = rw.prediction_types.make_multiclass(
     label_names=_prediction_label_names)
@@ -19,7 +20,7 @@ Predictions = rw.prediction_types.make_multiclass(
 
 class Wikipedia(FeatureExtractorRegressor):
     def __init__(self, workflow_element_names=[
-            'feature_extractor', 'regressor', '	nodes_info_new.csv']):
+            'feature_extractor', 'classifier', '	nodes_info_new.csv']):
         super(Wikipedia, self).__init__(workflow_element_names[:2])
         self.element_names = workflow_element_names
 
@@ -29,7 +30,7 @@ workflow = Wikipedia()
 # Scoring
 #--------------------------------------------
 
-class Precision(BaseScoreType):
+class Precision(ClassifierBaseScoreType):
     is_lower_the_better = False
     minimum = 0.0
     maximum = 1.0
@@ -38,14 +39,10 @@ class Precision(BaseScoreType):
         self.name = name
         self.precision = precision
 
-    def __call__(self, y_true, y_pred):
-        y_pred_binary = np.vectorize(lambda x : 0 if (x == 0) else 1)(y_pred)
-        y_true_binary = np.vectorize(lambda x : 0 if (x == 0) else 1)(y_true)
-        score = precision_score(y_true_binary, y_pred_binary)
-        return score
+    def __call__(self, true, pred):
+        return precision_score(true, pred)
 
-
-class Recall(BaseScoreType):
+class Recall(ClassifierBaseScoreType):
     is_lower_the_better = False
     minimum = 0.0
     maximum = 1.0
@@ -54,18 +51,11 @@ class Recall(BaseScoreType):
         self.name = name
         self.precision = precision
 
-    def __call__(self, y_true, y_pred):
-        y_pred_binary = np.vectorize(lambda x : 0 if (x == 0) else 1)(y_pred)
-        y_true_binary = np.vectorize(lambda x : 0 if (x == 0) else 1)(y_true)
-        score = recall_score(y_true_binary, y_pred_binary)
-        return score
+    def __call__(self, true, pred):
+        return recall_score(true, pred)
 
 
-score_types = [
-    #rw.score_types.ROCAUC(name='auc'),
-    Precision(name='prec', precision=2),
-    Recall(name='rec', precision=2)
-]
+score_types = [Precision(), Recall()]
 
 
 #--------------------------------------------
