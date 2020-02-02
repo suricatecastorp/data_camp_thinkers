@@ -1,5 +1,7 @@
-# data_camp_thinkers
-Project Data Camp 2019 2020
+# RAMP starting kit on Humanity Thinkers Network
+
+_Project Data Camp 2019 2020_
+_Authors: Augustin ESPINOSA, Pierre FONTAINE, Clément LIU, Paul ROUSSEL, Runtian ZHANG_
 
 ## Set up
 
