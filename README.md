@@ -6,7 +6,7 @@ _Authors: Augustin ESPINOSA, Pierre FONTAINE, Clément LIU, Paul ROUSSEL, Runtia
 
 ## Introduction
 
-In this project, we are interested in the thinkers who have influenced the history of mankind. We know that a thinker is inspired by some of his predecessors and will also influence his successors. The aim of this project is to determine the veracity of the existence of an influence of thought between two people.
+In this project, we are interested in the thinkers who have influenced the history of mankind. We know that a thinker is inspired by some of his predecessors and will also influence his successors. The aim of this project is to determine the existence of an influence of thought between two people.
 
 ## Description of the data set
 
