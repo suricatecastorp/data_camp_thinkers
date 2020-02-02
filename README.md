@@ -6,6 +6,8 @@ _Authors: Augustin ESPINOSA, Pierre FONTAINE, Clément LIU, Paul ROUSSEL, Runtia
 
 ## Introduction
 
+Whether it is in the field of science, of math, of philosophy or of litterature, an important part of creation is drawing inspiration from others in our field. It is not only natural but essential to creation to be open to what is being made around us. It is thus without suprise that a great number of works rely on the pieces of our contemporaries and of our forefathers. 
+
 In this project, we are interested in the thinkers who have influenced the history of mankind. We know that a thinker is inspired by some of his predecessors and will also influence his successors. The aim of this project is to determine the existence of an influence of thought between two people.
 
 ## Description of the data set
@@ -19,6 +21,10 @@ The dataset will consist of three databases:
    * `summary`: Abstract extracted from [Wikipedia](https://en.wikipedia.org/wiki/Main_Page)
 2. A training file `training_set.csv` that lists pairs of thinker identifiers and a boolean (0 or 1) value corresponding to the exercise of influence or not.
 3. A test file `testing_set.csv` with only pairs of thinkers whose influence must be determined or not
+
+## Goal
+
+Your goal is to predict, given a pair of thinkers if an influence exists between the two.
 
 ## Set up
 
