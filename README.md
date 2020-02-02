@@ -32,7 +32,7 @@ Open a terminal and
 
 ## Local notebook
 
-Get started on this RAMP with the [notebook]().
+Get started on this RAMP with the [notebook](https://github.com/suricatecastorp/data_camp_thinkers/blob/master/thinkers_starting_kit.ipynb).
 
 To test the starting-kit, run:
 
